@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get the list of files in the current directory
+files=$(ls)
+
+# Loop through each file
+for file in $files; do
+    # Check if the file is not README.me, z, or x
+    if [[ $file != "README.me" && $file != "z" && $file != "x" ]]; then
+        # Echo "#!/bin/bash" to the file
+        echo "#!/bin/bash" >> $file
+    fi
+done
+#!/bin/bash
