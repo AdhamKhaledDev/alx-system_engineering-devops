@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Prompt for the filename
+read -p "Enter the filename: " filename
+
+# Create the file
+touch "$filename"
+
+# Change the file mode to 777
+chmod 777 "$filename"
+
+echo "File $filename created and mode changed to 777."
+
