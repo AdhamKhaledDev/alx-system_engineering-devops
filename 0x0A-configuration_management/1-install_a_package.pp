@@ -1,9 +1,6 @@
-class { 'python': }  # Include the base python class
-
-package { 'Flask':
-  ensure   => installed,
-  provider => 'pip',
-  require  => Class['python'],
-  name     => 'flask',
-  version  => '2.1.0',
+#!/usr/bin/pup
+# Install an especific version of flask (2.1.0)
+package {'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3'
 }
