@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Update package lists
+apt-get update
+
+# Install Nginx web server
+apt-get install -y nginx
+
+# Create a new file named "index.html" in the default web root directory
+echo "Hello World!" > /var/www/html/index.html
+
+# Allow traffic on port 80 in the firewall (adjust if needed)
+ufw allow http
+
+# Enable and restart Nginx (without systemctl)
+/etc/init.d/nginx start
+
+# Verify Nginx is running
+ps aux | grep nginx
+
+exit 0
