@@ -1,0 +1,40 @@
+global
+    log     /dev/log local0
+    maxconn 2048
+    user    haproxy
+    group   haproxy
+    tune.ssl.default-dh-param 2048
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    retries 3
+    option  redispatch
+    timeout connect  5000
+    timeout client  10000
+    timeout server  10000
+    option  forwardfor
+    option  http-server-close
+
+frontend my_frontend-http
+    bind   0.0.0.0:80
+    reqadd X-Forwarded-Proto:\ http
+    default_backend my_backend
+
+frontend my_frontend-https
+    bind   0.0.0.0:443 ssl crt /etc/haproxy/certs/www.adhamdev.tech.pem
+    reqadd X-Forwarded-Proto:\ https
+    acl    letsencrypt-acl path_beg /.well-known/acme-challenge/
+    use_backend letsencrypt-backend if letsencrypt-acl
+    default_backend my_backend
+
+backend my_backend
+    balance  roundrobin
+    redirect scheme https if !{ ssl_fc }
+    server 530988-web-01 100.26.142.212:80 check
+    server 530988-web-02 54.144.138.7:80 check
+
+backend letsencrypt-backend
+    server letsencrypt 127.0.0.1:54321
