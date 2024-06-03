@@ -23,6 +23,6 @@ We found the bug in the database management software that was causing the memory
 * **Database Performance Training:**  We're giving our engineering team a crash course in database performance optimization and troubleshooting.
 * **Automated Load Testing and Chaos Engineering:**  We're testing the limits of our platform to identify and fix any weaknesses before they cause problems.
 
-![Alt text](image.png)
+![Alt text]([image.png](https://blog.sqlauthority.com/i/b/slowquery.jpg))
 
 We've learned our lesson:  Database servers need a healthy diet, and we're making sure they get it.  We're also making sure we're ready for anything, so our online banking platform can stay up and running smoothly for our users.
