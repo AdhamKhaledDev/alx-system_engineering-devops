@@ -1,6 +1,6 @@
 # ALX System Engineering and DevOps
 
-Welcome to the ALX System Engineering and DevOps repository! Here, you'll find answers and projects related to system engineering and DevOps tasks. Whether you're a student or an enthusiast, this repository aims to provide valuable insights and practical knowledge.
+Welcome to the ALX System Engineering and DevOps repository! This repo contains answers and projects related to system engineering and DevOps tasks. 
 
 ## Projects
 
